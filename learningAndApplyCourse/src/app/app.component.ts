@@ -8,4 +8,22 @@ import {Component} from '@angular/core';
 export class AppComponent {
   serverElements = [{type: 'server', name: 'test server', content: 'just test'}];
   name = 'alaa input';
+
+  onServerAdded(serverData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      type: 'server',
+      name: serverData.serverName,
+      content: serverData.serverContent
+    });
+  }
+
+  // tslint:disable-next-line:typedef
+  onBlueprintAdded(blueprintData: { serverName: string, serverContent: string }) {
+    this.serverElements.push({
+      type: 'blueprint',
+      name: blueprintData.serverName,
+      content: blueprintData.serverContent
+    });
+  }
+
 }
