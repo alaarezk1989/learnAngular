@@ -6,13 +6,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dinaFarms-angular": {
+    "my-first-app": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -20,7 +16,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/dinaFarms-angular",
+            "outputPath": "dist/my-first-app",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,13 +50,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -69,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "dinaFarms-angular:build"
+            "browserTarget": "my-first-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "dinaFarms-angular:build:production"
+              "browserTarget": "my-first-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "dinaFarms-angular:build"
+            "browserTarget": "my-first-app:build"
           }
         },
         "test": {
@@ -117,16 +113,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "dinaFarms-angular:serve"
+            "devServerTarget": "my-first-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "dinaFarms-angular:serve:production"
+              "devServerTarget": "my-first-app:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "dinaFarms-angular"
+  "defaultProject": "my-first-app"
 }
