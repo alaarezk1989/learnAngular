@@ -15,12 +15,8 @@ import {OddComponent} from './odd/odd.component';
 import {EvenComponent} from './even/even.component';
 import {DropdownDirective} from './shared/dropdown.directive';
 import {ShoppingListService} from './shopping-list/shopping-list.service';
-import {RouterModule, Routes} from '@angular/router';
 
-const appRouts: Routes = [
-  {path: 'recipes', component: RecipesComponent},
-  {path: 'shopping-list', component: ShoppingListComponent},
-];
+
 
 @NgModule({
   declarations: [
@@ -40,7 +36,6 @@ const appRouts: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRouts)
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent]
