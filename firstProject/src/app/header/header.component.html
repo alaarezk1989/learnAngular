@@ -13,20 +13,22 @@
           <a routerLink="/">Home</a>
         </li>
 
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuth">
           <a routerLink="recipes">Recipes</a>
         </li>
 
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="!isAuth">
           <a routerLink="auth">Authanticate</a>
         </li>
 
-        <li routerLinkActive="active">
+        <li routerLinkActive="active" *ngIf="isAuth">
           <a routerLink="shopping-list">Shopping List</a>
         </li>
 
       </ul>
-      <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right" *ngIf="isAuth">
+        <li><a style="cursor: pointer;"(click)="onLogout()" >Logout</a></li>
+
         <li class="dropdown" appDropdown>
           <a style="cursor: pointer;" class="dropdown-toggle" role="button">Manage <span class="caret"></span></a>
           <ul class="dropdown-menu">
