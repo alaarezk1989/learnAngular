@@ -4,14 +4,13 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {GameControlComponent} from './game-control/game-control.component';
-import {OddComponent} from './odd/odd.component';
-import {EvenComponent} from './even/even.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
-import { AuthComponent } from './auth/auth.component';
+import { HttpClientModule } from '@angular/common/http'
 import { RecipeModule } from './recipes/recipe.module';
 import { ShoppingListModule } from './shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core.module';
+import { AuthModule } from './auth/auth.module';
 
 
 
@@ -20,23 +19,20 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     HeaderComponent,
     GameControlComponent,
-    OddComponent,
-    EvenComponent,
-    AuthComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     RecipeModule,
     ShoppingListModule,
-    SharedModule
+    AuthModule,
+    SharedModule,
+    CoreModule,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [
-  ]
+  entryComponents: [ ],
+  providers :[]
 })
 export class AppModule {
 }
